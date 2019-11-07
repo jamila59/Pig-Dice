@@ -1,0 +1,9 @@
+br {
+    display: block;
+    margin-bottom: 2px;
+    font-size:2px;
+    line-height: 2px;
+}
+p{
+  font-weight: bold;
+}

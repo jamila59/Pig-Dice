@@ -1,3 +1,4 @@
+
 // back-end logic
 function Player (name, isActive) {
   this.name = name,
@@ -17,7 +18,6 @@ Player.prototype.addScore = function () {
     console.log(this.totalScore);
   } else if (this.number === 1) {
     this.score = 0;
-    this.totalScore = 0;
   }
 }
 
@@ -34,32 +34,48 @@ Player.prototype.alert = function() {
     alert("Congrats! You have won the game!");
   }
 }
+Player.prototype.getName = function() {
+  console.log("getName: " + this.name);
+  return this.name;
+}
 // user-interface
+var nameFirstPlayer = "";
+var nameSecondPlayer = "";
 $(document).ready(function() {
-  var newPlayer  = new Player($("input#name").val(), true);
-  var newPlayer2  = new Player($("input#name").val(), false);
-  $("#formOne").submit(function(event){
+
+$("#formOne").submit(function(event){
     event.preventDefault();
-    // Player 1
-    if (newPlayer.active === true) {
-      newPlayer.roll();
-      newPlayer.addScore();
-      newPlayer.alert();
-      $(".whatRoll").text(newPlayer.number);
-      $(".score").text(newPlayer.totalScore);
-    } else {
-      newPlayer2.roll();
-      newPlayer2.addScore();
-      newPlayer2.alert();
-      $(".whatRoll").text(newPlayer2.number);
-      $(".score").text(newPlayer2.totalScore);
-    }
+     nameFirstPlayer = $("input#nameID").val();
+     nameSecondPlayer = $("input#nameID7").val();
+});
+   var newPlayer  = new Player(nameFirstPlayer , true);
+   var newPlayer2  = new Player(nameSecondPlayer , false);
+     console.log(nameFirstPlayer, nameSecondPlayer;
+   //Rolling button
+    $("#roll").click(function(){
+      if (newPlayer.active === true) {
+        // alert(" It is " + newPlayer.getName() + "'s turn ");
+        newPlayer.roll();
+        newPlayer.addScore();
+        newPlayer.alert();
+        $(".scorePerThisTurn1").text(newPlayer.number);
+        $(".overallScore1").text(newPlayer.totalScore);
+      } else {
+        console.log(newPlayer2);
+        newPlayer2.roll();
+        newPlayer2.addScore();
+        newPlayer2.alert();
+        $(".scorePerThisTurn2").text(newPlayer2.number);
+        $(".overallScore2").text(newPlayer2.totalScore);
+      }
+    });
+
+    // "HOLD" button functionality
+    $("#pause").click(function() {
+    newPlayer.changeActive();
+    alert(" It is " + newPlayer2.getName() + "'s turn ")
+    console.log(newPlayer2.getName());
+    newPlayer2.changeActive();
   });
 
-  // "HOLD" button functionality
-  $(".pause").click(function() {
-    newPlayer.changeActive();
-    newPlayer2.changeActive();
-    // TODO: implement hold feature to swith active player
-  });
  });

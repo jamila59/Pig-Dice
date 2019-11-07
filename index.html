@@ -15,27 +15,40 @@
     <form id="formOne">
       <div class="row">
         <div class="col-md-6">
-          <p>Player 1</p>
+          <p><b>Player 1</b></p>
           <label for="name">Enter Name:</label>
-          <input type="text" id="nameID">
-        </div>
-      </div>
-      <div class="row">
+          <input type="text" id="nameID"><br><br><br>
+        </div><br>
       <div class="col-md-6">
-        <p>Player 2</p>
+        <p><b>Player 2</b></p>
         <label for="name">Enter Name:</label>
-        <input type="text" id="nameID">
+        <input type="text" id="nameID7"><br>
+      </div><br>
       </div>
-    </div>
-    <button type="submit" name="button">Roll dice!</button><br>
-      </form>
-      <div class="whatRoll">
-        <p>Score per this turn:</p>
-      </div>
-      <div class ="score">
-        <p>Overall Score:</p>
-      </div>
-      <button class="pause" type="submit" name="button">Hold</button>
-  </div>
+    <button type="submit" class="btn btn-info btn-lg btn-block" name="button">Register Players!</button><br>
+    <button id="roll" class="btn btn-info btn-lg btn-block" type="click" name="button">Roll!</button><br>
+    <button id="pause" class="btn btn-info btn-lg btn-block" type="click" name="button">Hold!</button>
+    </form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="whatRoll">
+              <p>Score per this turn:</p>
+                <span class="scorePerThisTurn1"></span><br>
+            </div><br><br>
+            <div class ="score">
+              <p>Overall Score:</p>
+                <span class="overallScore1"></span><br>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="whatRoll">
+              <p>Score per this turn:</p>
+                <span class="scorePerThisTurn2"></span><br>
+            </div> <br><br>
+            <div class ="score">
+              <p>Overall Score:</p>
+                <span class="overallScore2"></span><br>
+            </div>
+          </div>
 </body>
 </html>
