@@ -16,4 +16,5 @@ DONE:
 2) Make buttons switch between players i.e. whose turn it is
 
 NEED TO DO:
-2) Make buttons switch between players i.e. whose turn it is
+1) split game into two columns for each players
+2) alert which player is active
