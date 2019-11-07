@@ -3,19 +3,21 @@ function Player (name, isActive) {
   this.name = name,
   this.score = 0,
   this.totalScore = 0,
-  this.number = 0,
   this.active = isActive
 }
 
-Player.prototype.roll = function () {
-  this.number = Math.ceil( Math.random() * 6 );
+function Dice () {
 }
 
-Player.prototype.addScore = function () {
+Dice.prototype.roll = function () {
+  return Math.ceil( Math.random() * 6 );
+}
+
+Player.prototype.addScore = function (currentNumber) {
   if (this.number !== 1 ){
-    this.totalScore += this.number;
+    this.totalScore += currentNumber;
     console.log(this.totalScore);
-  } else if (this.number === 1) {
+  } else if (currentNumber === 1) {
     this.score = 0;
     this.totalScore = 0;
   }
@@ -38,18 +40,17 @@ Player.prototype.alert = function() {
 $(document).ready(function() {
   var newPlayer  = new Player($("input#name").val(), true);
   var newPlayer2  = new Player($("input#name").val(), false);
+  var dice = new Dice();
   $("#formOne").submit(function(event){
     event.preventDefault();
     // Player 1
     if (newPlayer.active === true) {
-      newPlayer.roll();
-      newPlayer.addScore();
+      newPlayer.addScore(dice.roll());
       newPlayer.alert();
       $(".whatRoll").text(newPlayer.number);
       $(".score").text(newPlayer.totalScore);
     } else {
-      newPlayer2.roll();
-      newPlayer2.addScore();
+      newPlayer2.addScore(dice.roll());
       newPlayer2.alert();
       $(".whatRoll").text(newPlayer2.number);
       $(".score").text(newPlayer2.totalScore);

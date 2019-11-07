@@ -1,0 +1,19 @@
+Rules
+
+1) Two players only
+2) One dice only
+3) First player to reach 100 points (score) wins
+  - Cumulative points (rolls add up)
+4) Rolling a "1" resets all points you've accumulated in your turn
+5) Choosing to pass the turn to the other player allows you to save the points you have so far
+
+DONE:
+1) Adding points to a player's score
+2) Created a Player class
+3) Constructed / instantiated a Player object
+
+1) Create a Player2
+2) Make buttons switch between players i.e. whose turn it is
+
+NEED TO DO:
+2) Make buttons switch between players i.e. whose turn it is
